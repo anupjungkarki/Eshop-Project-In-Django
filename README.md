@@ -21,8 +21,8 @@ For Running this project
      
 5.After that use the default user id, password for login or you can also register as new user
 
-   username:testuser
-   password:eshoptest
+     username:testuser
+     password:eshoptest
    
 7.Now you are login with the page.
 
