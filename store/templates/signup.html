@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="container">
+	<div class="p-4 m-4">
+		<div class="col-lg-5 mx-auto border rounded pt-4 pb-4">
+		<h3 class="alert alert-light text-center">Create An Account</h3>
+		<!-- Alert Message start -->
+		 	{% if error%}
+		 	<div class="alert alert-danger">
+		 		{{error}}
+		 	</div>
+            {% endif %}
+        <!-- Alert Message End -->
+		 <form action="/signup" method="post">
+		 	{% csrf_token %}
+             <div class="form-group">
+               <label for="FirstName">FirstName</label>
+               <input type="text" class="form-control form-control-sm" id="#" value="{{value.first_name}}" name="firstname" placeholder="First Name">
+              </div>
+
+              <div class="form-group">
+               <label for="exampleInputlastname">LastName</label>
+               <input type="text" class="form-control form-control-sm" id="#" value="{{value.last_name}}" name="lastname" placeholder="Last Name">
+              </div>
+
+			 <div class="form-group">
+               <label for="exampleInputEmail">Phone Number</label>
+               <input type="text" class="form-control form-control-sm" id="#" value="{{value.phone}}" name="phone" placeholder="+977-9804714399">
+              </div>
+
+			 <div class="form-group">
+               <label for="Phone">Email Address</label>
+               <input type="email" class="form-control form-control-sm" id="#" value="{{value.email}}" name="email" placeholder="example@gmail.com">
+             </div>
+
+             <div class="form-group">
+               <label for="exampleInputPassword1">Password</label>
+               <input type="password" class="form-control form-control-sm" id="#" name="password" placeholder="************">
+             </div>
+          <button type="submit" class="btn btn-info btn-sm">Create Account</button>
+		</form>
+	</div>
+  </div>
+</div>
+{% endblock %}

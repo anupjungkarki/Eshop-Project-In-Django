@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="container">
+	<div class="p-4 m-4">
+		<div class="col-lg-5 mx-auto border rounded pt-4 pb-4">
+		<h3 class="alert alert-light text-center">Login To Account</h3>
+		<!-- Alert Message start -->
+		 	{% if error%}
+		 	<div class="alert alert-danger">
+		 		{{error}}
+		 	</div>
+            {% endif %}
+        <!-- Alert Message End -->
+		 <form action="/login" method="post">
+		 	{% csrf_token %}
+			 <div class="form-group">
+               <label for="Phone">Email Address</label>
+               <input type="email" class="form-control form-control-sm" id="#" value="{{value.email}}" name="email" placeholder="example@gmail.com">
+             </div>
+
+             <div class="form-group">
+               <label for="exampleInputPassword1">Password</label>
+               <input type="password" class="form-control form-control-sm" id="#" name="password" placeholder="************">
+             </div>
+          <button type="submit" class="btn btn-info btn-sm col-lg-4">Login</button>
+		</form>
+	</div>
+  </div>
+</div>
+{% endblock %}
